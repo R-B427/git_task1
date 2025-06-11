@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Welcome to MyPollApp</title>
+<style>
+  body, html {
+    height: 100%;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #007BFF;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+  }
+
+  .container {
+    text-align: center;
+    background: rgba(0,0,0,0.25);
+    padding: 3rem 4rem;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.5);
+  }
+
+  h1 {
+    margin-bottom: 1.5rem;
+  }
+
+  .btn-group {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+  }
+
+  .btn {
+    padding: 0.75rem 1.5rem;
+    font-size: 1.1rem;
+    color: #007BFF;
+    background: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+  }
+
+  .btn:hover {
+    background-color: #0056b3;
+    color: white;
+  }
+</style>
+</head>
+<body>
+  <div class="container">
+    <h1>Welcome to MyPollApp</h1>
+    <div class="btn-group">
+      <a href="{% url 'mypollapp:register' %}" class="btn">Register</a>
+      <a href="{% url 'mypollapp:login' %}" class="btn">Login</a>
+    </div>
+  </div>
+</body>
+</html>

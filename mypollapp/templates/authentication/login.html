@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Login - MyPollApp</title>
+<style>
+  body, html {
+    height: 100%;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #007BFF;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+  }
+
+  .login-container {
+    background: rgba(0,0,0,0.25);
+    padding: 2.5rem 3rem;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.5);
+    width: 320px;
+    text-align: center;
+  }
+
+  h2 {
+    margin-bottom: 1.5rem;
+  }
+
+  label {
+    display: block;
+    text-align: left;
+    margin-bottom: 0.3rem;
+    font-weight: bold;
+  }
+
+  input[type="text"], input[type="password"] {
+    width: 100%;
+    padding: 0.5rem;
+    margin-bottom: 1.2rem;
+    border: none;
+    border-radius: 5px;
+  }
+
+  button {
+    width: 100%;
+    padding: 0.6rem;
+    border: none;
+    border-radius: 5px;
+    background-color: white;
+    color: #007BFF;
+    font-weight: bold;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  button:hover {
+    background-color: #0056b3;
+    color: white;
+  }
+
+  .error-message {
+    color: #ff6666;
+    margin-bottom: 1rem;
+  }
+
+  .register-link {
+    margin-top: 1rem;
+    display: block;
+    color: white;
+    text-decoration: none;
+  }
+
+  .register-link:hover {
+    text-decoration: underline;
+  }
+</style>
+</head>
+<body>
+  <div class="login-container">
+    <h2>Login</h2>
+    <form method="POST" action="{% url 'mypollapp:login' %}">
+      {% csrf_token %}
+      <label for="username">Username</label>
+      <input type="text" id="username" name="username" required>
+
+      <label for="password">Password</label>
+      <input type="password" id="password" name="password" required>
+
+      {% if error %}
+        <p class="error-message">{{ error }}</p>
+      {% endif %}
+
+      <button type="submit">Login</button>
+    </form>
+    <a href="{% url 'mypollapp:register' %}" class="register-link">Don't have an account? Register here</a>
+  </div>
+</body>
+</html>

@@ -1,0 +1,14 @@
+{% extends 'mypollapp/base.html' %}  {# Inherit from the base template #}
+
+{% block content %}
+<div class="card shadow-sm">
+    <div class="card-header bg-primary text-white">
+        <h2 class="mb-0">Welcome to MyPollApp (Bootstrap Page)</h2>  {# Page title #}
+    </div>
+    <div class="card-body">
+        <p class="lead">Create and participate in polls easily!</p>  {# Introductory text #}
+        <a href="#" class="btn btn-success me-2">Create Poll</a>  {# Button to create a poll #}
+        <a href="#" class="btn btn-outline-primary">View Polls</a>  {# Button to view polls #}
+    </div>
+</div>
+{% endblock %}
